@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our World ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    overflow: hidden;
+    color: white;
+}
+
+/* Sakura petals */
+.petal {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ffb6c1;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh); }
+    100% { transform: translateY(110vh); }
+}
+
+/* Center container */
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Title */
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    opacity: 0.7;
+    margin-bottom: 50px;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    gap: 40px;
+}
+
+/* Card */
+.card {
+    width: 220px;
+    height: 220px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* Glow colors */
+.card.mine:hover {
+    box-shadow: 0 0 30px #4da6ff;
+}
+
+.card.hers:hover {
+    box-shadow: 0 0 30px #ff4d88;
+}
+
+/* Icon */
+.icon {
+    font-size: 50px;
+}
+
+/* Text */
+.card p {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Fade animation */
+.fade {
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.card:active {
+    transform: scale(0.95);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+</style>
+</head>
+
+<body>
+<!-- Sakura 
+<script>
+for(let i = 0; i < 20; i++) {
+    let petal = document.createElement("div");
+    petal.className = "petal";
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (6 + Math.random() * 4) + "s";
+    document.body.appendChild(petal);
+}
+</script> -->
+<script>
+for(let i = 0; i < 20; i++) {
+    let petal = document.createElement("div");
+    petal.className = "petal";
+
+    petal.style.left = Math.random() * 100 + "vw";
+    petal.style.animationDuration = (6 + Math.random() * 5) + "s";
+    petal.style.animationDelay = Math.random() * 5 + "s";
+
+    document.body.appendChild(petal);
+}
+</script>
+
+<div class="container fade">
+
+    <h1>Our World ❤️</h1>
+    <p class="subtitle">A small place for our memories...</p>
+
+    <div class="cards">
+
+        <!-- Mine -->
+        <div class="card mine" onclick="openMine()">
+            <div class="icon">🌍</div>
+            <p>rampujariii</p>
+        </div>
+
+        <!-- Hers -->
+        <div class="card hers" onclick="openHers()">
+            <div class="icon">💖</div>
+            <p>jasnavi_BABYCORN</p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function openMine() {
+    window.location.href = "mine.html";
+}
+
+function openHers() {
+    window.location.href = "jasnavi_BABYCORN.html";
+}
+</script>
+
+</body>
+</html>
